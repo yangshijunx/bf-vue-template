@@ -5,6 +5,7 @@ import 'ant-design-vue/dist/reset.css'
 
 import App from './App.vue'
 import router from './router'
+import './styles/tailwind.css'
 import './styles/index.scss'
 
 const app = createApp(App)

@@ -1,10 +1,5 @@
 /* 全局样式入口文件 */
 
-/* 导入 Tailwind CSS */
-@import 'tailwindcss';
-
-/* 导入变量 */
-@import './variables';
-
-/* 导入全局样式 */
-@import './global';
+/* 导入变量和全局样式 */
+@use './variables';
+@use './global';
