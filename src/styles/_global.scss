@@ -1,11 +1,5 @@
 /* 全局样式 */
-
-// 重置样式
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* 注意：Tailwind CSS 已包含 Preflight 重置样式，无需手动重置 */
 
 // 滚动条美化
 ::-webkit-scrollbar {
