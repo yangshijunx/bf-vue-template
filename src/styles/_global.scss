@@ -1,0 +1,27 @@
+/* 全局样式 */
+
+// 重置样式
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// 滚动条美化
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+  border-radius: 3px;
+
+  &:hover {
+    background-color: #a8a8a8;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}

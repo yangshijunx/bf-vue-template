@@ -1,0 +1,12 @@
+/* SCSS 变量 */
+/* 颜色相关请使用 Ant Design 的 design token */
+/* 基于此模板的项目可在此添加自定义 design token */
+
+// 层级
+$z-index-dropdown: 1000;
+$z-index-modal: 1050;
+$z-index-toast: 1100;
+
+// 过渡
+$transition-duration: 0.2s;
+$transition-timing: ease-in-out;
