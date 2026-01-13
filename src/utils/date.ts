@@ -29,7 +29,7 @@ export function formatDate(
     ss: padZero(d.getSeconds()),
   }
 
-  return format.replace(/YYYY|MM|DD|HH|mm|ss/g, (match) => tokens[match])
+  return format.replace(/YYYY|MM|DD|HH|mm|ss/g, (match) => tokens[match] ?? match)
 }
 
 /**
