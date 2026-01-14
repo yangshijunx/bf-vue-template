@@ -1,0 +1,165 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "small_model": "opencode/grok-code",
+  "model": "foxcode-claude/claude-opus-4-5",
+  "tools": {
+    "webfetch": false
+  },
+  "mcp": {
+    "metaso": {
+      "type": "remote",
+      "url": "https://metaso.cn/api/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer mk-04AF5EEDAE1F9701B1B00E45AE00D8B8"
+      }
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:ctx7sk-49ae07a7-55d7-4068-badc-f653f6e830fc}"
+      }
+    },
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app"
+    }
+  },
+  "provider": {
+    "foxcode-google": {
+      "npm": "@ai-sdk/google",
+      "name": "Foxcode-Google",
+      "options": {
+        "baseURL": "https://code.newcli.com/gemini/v1beta",
+        "apiKey": "sk-ant-oat01-JTyGOS7KVV-clbHas1vFVKrIvQotl2w8Xv7aS2A1byRCKj7d4tPyIKEGxc85hiOSkpfoaWP1QQ3rdALJ9nFBRi8o9HB4WAA"
+      },
+      "models": {
+        "gemini-3-pro": {
+          "name": "gemini-3-pro",
+          "id": "gemini-3-pro",
+          "limit": {
+            "context": 1048576,
+            "output": 65535
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          }
+        }
+      }
+    },
+    "foxcode-claude": {
+      "npm": "@ai-sdk/anthropic",
+      "name": "Foxcode-Claude",
+      "options": {
+        "baseURL": "https://code.newcli.com/claude/aws/v1",
+        "apiKey": "sk-ant-oat01-JTyGOS7KVV-clbHas1vFVKrIvQotl2w8Xv7aS2A1byRCKj7d4tPyIKEGxc85hiOSkpfoaWP1QQ3rdALJ9nFBRi8o9HB4WAA"
+      },
+      "models": {
+        "claude-sonnet-4-5": {
+          "id": "claude-sonnet-4-5",
+          "name": "claude-sonnet-4-5",
+          "family": "claude-sonnet",
+          "attachment": true,
+          "reasoning": false,
+          "tool_call": true,
+          "temperature": true,
+          "release_date": "2025-11-24",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          }
+        },
+        "claude-opus-4-5": {
+          "id": "claude-opus-4-5-20251101",
+          "name": "Claude Opus 4.5 (latest)",
+          "family": "claude-opus",
+          "attachment": true,
+          "reasoning": false,
+          "tool_call": true,
+          "temperature": true,
+          "release_date": "2025-11-24",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          }
+        },
+        "claude-opus-4-5-thinking": {
+          "id": "claude-opus-4-5-thinking",
+          "name": "Claude Opus 4.5 Thinking",
+          "family": "claude-opus",
+          "attachment": true,
+          "reasoning": true,
+          "tool_call": true,
+          "temperature": true,
+          "release_date": "2025-11-24",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          }
+        },
+        "claude-sonnet-4-5-thinking": {
+          "id": "claude-sonnet-4-5-thinking",
+          "name": "Claude Sonnet 4.5 Thinking",
+          "family": "claude-sonnet",
+          "attachment": true,
+          "reasoning": true,
+          "tool_call": true,
+          "temperature": true,
+          "release_date": "2025-11-24",
+          "modalities": {
+            "input": [
+              "text",
+              "image",
+              "pdf"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          }
+        }
+      }
+    }
+  }
+}
