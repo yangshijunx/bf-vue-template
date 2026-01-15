@@ -1,4 +1,4 @@
-import { DashboardOutlined, UserOutlined } from '@ant-design/icons-vue'
+import { DashboardOutlined } from '@ant-design/icons-vue'
 import type { Component } from 'vue'
 
 export interface MenuItem {
@@ -15,11 +15,5 @@ export const menuConfig: MenuItem[] = [
     label: '仪表盘',
     icon: DashboardOutlined,
     path: '/dashboard',
-  },
-  {
-    key: 'user-list',
-    label: '用户管理',
-    icon: UserOutlined,
-    path: '/user/list',
   },
 ]
