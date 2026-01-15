@@ -115,11 +115,12 @@ function handleMenuClick({ key }: { key: string }) {
   border-right: 1px solid #f0f0f0;
 
   .logo {
-    height: 64px;
+    height: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 16px;
+    padding: 0 20px;
+    margin-bottom: 8px;
     border-bottom: 1px solid #f0f0f0;
 
     .logo-icon {
@@ -127,16 +128,48 @@ function handleMenuClick({ key }: { key: string }) {
     }
 
     .logo-text-mini {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
       color: #1890ff;
     }
 
     .logo-text {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 600;
       color: #1a1a1a;
       white-space: nowrap;
+    }
+  }
+
+  // 菜单样式优化
+  :deep(.ant-menu) {
+    padding: 8px 12px;
+    border-inline-end: none !important;
+
+    .ant-menu-item {
+      height: 44px;
+      line-height: 44px;
+      margin-bottom: 6px;
+      border-radius: 8px;
+    }
+
+    .ant-menu-submenu-title {
+      height: 44px;
+      line-height: 44px;
+      border-radius: 8px;
+    }
+
+    .ant-menu-submenu {
+      margin-bottom: 6px;
+
+      .ant-menu-item {
+        margin-bottom: 4px;
+      }
+    }
+
+    .ant-menu-item-icon,
+    .anticon {
+      font-size: 18px;
     }
   }
 }
