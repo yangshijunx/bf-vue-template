@@ -115,12 +115,11 @@ function handleMenuClick({ key }: { key: string }) {
   border-right: 1px solid #f0f0f0;
 
   .logo {
-    height: 72px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    margin-bottom: 8px;
     border-bottom: 1px solid #f0f0f0;
 
     .logo-icon {
