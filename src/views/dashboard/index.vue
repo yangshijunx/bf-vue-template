@@ -3,7 +3,7 @@
   这是一个示例页面，如果项目不需要可以删除此文件
   删除后请同时更新：
   - src/router/index.ts 中的路由配置
-  - src/config/menu.ts 中的菜单配置
+  注意：菜单会自动从路由配置生成，无需手动维护
 -->
 <script setup lang="ts">
 import {

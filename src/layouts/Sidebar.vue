@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, h } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { menuConfig, type MenuItem } from '@/config/menu'
+import { generateMenuFromRoutes, type MenuItem } from '@/utils/menu'
 
 const props = defineProps<{
   collapsed: boolean
@@ -15,6 +15,9 @@ const emit = defineEmits<{
 const router = useRouter()
 const route = useRoute()
 
+// 从路由生成菜单配置
+const menuConfig = computed(() => generateMenuFromRoutes(router.getRoutes()))
+
 // 当前选中的菜单项
 const selectedKeys = computed(() => [(route.meta.menuKey as string) || (route.name as string)])
 
@@ -22,7 +25,7 @@ const selectedKeys = computed(() => [(route.meta.menuKey as string) || (route.na
 const openKeys = computed(() => {
   const key = (route.meta.menuKey as string) || (route.name as string)
   // 查找父级菜单
-  for (const item of menuConfig) {
+  for (const item of menuConfig.value) {
     if (item.children?.some((child) => child.key === key)) {
       return [item.key]
     }
@@ -31,7 +34,14 @@ const openKeys = computed(() => {
 })
 
 // 转换菜单配置为 Ant Design 格式
-function transformMenuItems(items: MenuItem[]): any[] {
+interface AntMenuItem {
+  key: string
+  icon?: () => ReturnType<typeof h>
+  label: string
+  children?: AntMenuItem[]
+}
+
+function transformMenuItems(items: MenuItem[]): AntMenuItem[] {
   return items.map((item) => ({
     key: item.key,
     icon: item.icon ? () => h(item.icon!) : undefined,
@@ -40,7 +50,7 @@ function transformMenuItems(items: MenuItem[]): any[] {
   }))
 }
 
-const menuItems = computed(() => transformMenuItems(menuConfig))
+const menuItems = computed(() => transformMenuItems(menuConfig.value))
 
 // 菜单点击处理
 function handleMenuClick({ key }: { key: string }) {
@@ -55,7 +65,7 @@ function handleMenuClick({ key }: { key: string }) {
       }
     }
   }
-  const path = findPath(menuConfig)
+  const path = findPath(menuConfig.value)
   if (path) {
     router.push(path)
     // 移动端点击菜单后关闭侧边栏
